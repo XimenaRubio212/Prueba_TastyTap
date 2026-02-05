@@ -10,16 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Etiqueta para establecer el título de la página -->
     <title>TastyTap | Tienda</title>
-
-    <!-- Importación de estilos base y variables -->
-    <link rel="stylesheet" href="/css/utils/Base.css">
-    <!-- Importación de normalización para asegurar consistencia entre navegadores -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <!-- Estilos generales de la aplicación -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- Estilos específicos para botones y componentes -->
-    <link rel="stylesheet" href="/css/components/button.css">
-    <!-- Importación de iconos de Font Awesome -->
+    <!-- Importación de estilos base y variables para la primera vista que ve el usuario -->
+    <link rel="stylesheet" href="/../css/style.css">
+    <!-- Importación de iconos de Font Awesome del los iconos del footer -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <!-- Se cierra la etiqueta de cabecera del documento -->
 </head>
@@ -30,7 +23,7 @@
     <!-- barra de navegación superior estática que contiene el logo y el menú principal -->
     <header class="navbar">
         <!-- logo de la barra de navegación -->
-        <div class="navbar__logo">
+        <div class="logo">
             <!-- imagen del logo con su respectivo texto alternativo -->
             <img src="/img/TastyTap.png" alt="Logo TastyTap" style="height: 30px; vertical-align: middle; margin-right: 10px;">
             <!-- nombre de la marca como encabezado -->
@@ -44,8 +37,9 @@
             <a href="/views/user/menu.html">Menú</a>
             <!-- Enlace a la vista de la tienda, donde se muestran los productos y sus detalles del lugar -->
             <a href="/views/user/tienda.html">Tienda</a>
-            <!--  Enlace a la vista de contacto -->
-            <a href="/views/user/contacto.html">Contacto</a>
+            <!-- Enlace a la vista carrito, donde el usuario solo podra agregar pero no podra comprar,
+            porque al intentar comprar los productos lo va a redireccionar al registro y
+            cuando el cliente se registra lo va a redirigir al login para que ingrese y pueda hacer la compra -->
             <!--  Enlace a la vista de login  de sesión para usuarios -->
             <a href="/views/user/login.html">Login</a>
             <!-- se cierra la etiqueta de la barra de navegación -->

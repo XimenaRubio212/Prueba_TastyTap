@@ -1,0 +1,132 @@
+/*ACTUALIZADO*/
+/*Aqui se van a importar los otros archivos css para que se apliquen los estilos en la pagina*/
+@import url('');
+
+/*Aqui se va a aplicar la Modularizacion y
+En este archivo solo debe contener lo que se va a repetir o reutilizar en todas las vistas,
+como el (Headeer, Footer, Tipografias) */
+
+/* Reset básico para consistencia de la pagina,
+esto es para que cargen los nuevos estilos a la pagina */
+* {
+    margin: 0;
+    padding: 0;
+    /* Fundamental para que los tamaños sean iguales en todo lado */
+    box-sizing: border-box; 
+}
+
+/* Esto es para que no aparezca el scroll de la parte de abajo
+que no deberia aparecer y solo debe aparecer en la parte derecha de la pagina */
+html, body {
+    /*Esto es para que tome toda la imagen para que no aparezca el scroll*/
+    width: 100%;
+    /* Evita scrolls horizontales inesperados en la parte de abajo de la pagina*/
+    overflow-x: hidden; 
+}
+
+/* Aqui se va a manejar el menu hamburguesa para ocultar los enlaces o menu de navegacion
+del menu en dispositivos moviles y pantallas pequeñas. */
+
+/* Menu Hamburguesa */
+
+/* Reset y Base (Configuraciones iniciales) */
+* {
+    /*Se incluye el padding y el borde en el ancho total del elemento
+    para que no crezaca inesperadamente*/
+    box-sizing: border-box;
+}
+
+/*Aqui para darle estilos al body para reutilizarlos en todas las vistas*/
+body {
+    /*Se define la fuente principal, si no existe, el tipo de letra
+    se esta usando Arial o cualquier sin serifa */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    /*Quita los margenes por defecto del navegador*/
+    margin: 0;
+    /*Color de fondo casi blanco para el fondo*/
+    color: #fdfdfd;
+    /*color de texto gris oscuro casi negro*/
+    color: #333;
+    /*Se evite que aparezca la barra de desplazamiento horizontal*/
+    overflow: hidden;
+}
+
+/*Header esto es el encabezado*/
+header {
+    /*Esto es para el fondo naranja suave*/
+    background-color: #ef8d4d;
+    /*Espacio interno: 1rem arriba/abajo, 4rem inzquierda/derecha*/
+    padding: 1rem 4rem;
+    /*Activa flexbox para alinear elementos*/
+    display: flex;
+    /*Separa el logo de la navegacion (uno a cada extremo)*/
+    justify-content: space-between;
+    /*Alinea verticalmente los elementos al centro*/
+    align-self: center;
+    /*Texto en color blanco*/
+    color: white;
+}
+
+/*Este es para la barra de navegacion */
+.navbar {
+    /*Este es el color principal que etiene la barra de navegacion*/
+    /*en el proyecto original se llama --color-principal*/
+    background-color: var(--color-naranja);
+    /*Este es para cambiar el color de titulo de la aplicacion web*/
+    color: var(--color-blanco);
+    /*esto es par aque a barra de navegacion
+    se posiciones al lado del titulo*/
+    display: flex;
+    /*esto es para posicionar la barra de navegacion al lado derecho*/
+    justify-content: space-between;
+    /*esto es para entrar la barra de navegacion*/
+    align-items: center;
+    /*esto es para darle espacio a la barra de navegacion*/
+    padding: 1rem 2rem;
+    /*Si o caben, se pasan a la siguiente fila*/
+    flex-wrap: wrap;
+}
+
+/*Aqui vamos a darle forma, tamaño y letra del logo*/
+.logo {
+    /*esto es para que el logo es ajuste al tamaño del navegador*/
+    display: flex;
+    /*esto es para centralo*/
+    align-items: center;
+    /*esto es para darle un espaciado*/
+    gap:0.75rem;
+}
+
+/*Est es para la imagen del logo*/
+.logo img {
+    /*esto es para darle un tamaño al logo*/
+    height: 40px;
+}
+
+/*Esto es para la barra de navegacion*/
+.navbar__menu {
+    /*esto es para que el menu de navegacion tenga un tamaño*/
+    display: flex;
+    /*Si o caben, se pasan a la siguiente fila*/
+    flex-wrap: wrap;
+    /*esto es para darles un espacio a cda mennu de navegacion*/
+    gap:1.25rem;
+}
+
+/*esto es para las opciones del menu de navegacion*/
+.navbar__menu a {
+    /*esto es para aparezca la linea en la cual esta posicionada la vista*/
+    position: relative;
+    /*esto es para cambiarle el color a las opciones del menu de navegacion*/
+    color: var(--color-blanco);
+    /*esto es para quitarle la linea que tiene por predeterminado las opciones del menu de navegacion*/
+    text-decoration: none;
+    /*no se lo que hace*/
+    font-weight: 500;
+    /*no se lo que hace*/
+    transition: var(--transicion);
+    /*esto es para el espciado de las opciones a la linea que identifica en qeu posicion esta la vista*/
+    padding-bottom: 4px;
+}
+
+
