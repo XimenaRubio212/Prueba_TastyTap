@@ -1,113 +1,139 @@
-<!-- Se declara que este documento es HTML5, asegurando que el navegador lo reconozca -->
 <!DOCTYPE html>
-<!-- Etiqueta del documento que indica el idioma de la página -->
 <html lang="es">
-<!-- Etiqueta de cabecera del documento -->
 <head>
-    <!-- Sección de metadatos e importaciones que no se ven directamente en la página -->
     <meta charset="UTF-8">
-    <!-- Etiqueta para configurar la vista del dispositivo para que sea responsivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Etiqueta para establecer el título de la página -->
-    <title>TastyTap | Menú</title>
-    <!-- Enlaces a los archivos CSS unificados y componentes -->
-    <link rel="stylesheet" href="/css/utils/Base.css">
+    <title>TastyTap | Menú del Área Metropolitana</title>
+    <!-- CSS específico para el Menú -->
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/components/button.css">
-    <!-- Importación de la librería de iconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<!-- Se cierra la etiqueta de cabecera del documento -->
 </head>
-
 <body>
 
-    <!-- INPUTS OCULTOS (Controlan el estado del carrito sin necesidad de JavaScript) -->
-    <!-- Estos checkboxes permiten que el CSS sepa qué productos han sido seleccionados -->
-    <input type="checkbox" id="menu-item1" class="cart-control">
-    <input type="checkbox" id="menu-item2" class="cart-control">
-    <input type="checkbox" id="menu-item3" class="cart-control">
-    <input type="checkbox" id="menu-item4" class="cart-control">
-
-    <!-- CABECERA (Navbar unificada) -->
     <header class="navbar">
-      <!-- Contenedor del logo visual y nombre de marca -->
-      <div class="navbar__logo">
-        <img src="/img/TastyTap.png" alt="Logo TastyTap" style="height: 30px; vertical-align: middle; margin-right: 10px;">
-        <h1>TastyTap</h1>
-      </div>
-      <!-- Menú de navegación principal -->
-      <nav class="navbar__menu">
-        <!-- Enlaces de navegación prn -->
-        <a href="/index.html">Inicio</a>
-        <!-- Enlaces de navegación prn -->
-        <a href="/views/user/menu.html" class="active">Menú</a>
-        <a href="/views/user/tienda.html">Tienda</a>
-        <a href="/views/user/contacto.html">Contacto</a>
-        <a href="/views/user/login.html">Login</a>
-      </nav>
+        <div class="navbar__logo">
+            <img src="/img/TastyTap.png" alt="Logo TastyTap" style="height: 4rem; vertical-align: middle; margin-right: 10px;">
+            <h1>TastyTap</h1>
+        </div>
+        <nav class="navbar__menu">
+            <a href="/index.html">Inicio</a>
+            <a href="/views/public/menu.html" class="active">Menú</a>
+            <a href="/views/public/tienda.html">Tienda</a>
+            <a href="/views/public/carrito.html">Carrito</a>
+            <a href="/views/public/login.html">Login</a>
+        </nav>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
     <main>
-      <!-- Título principal decorado con emoji -->
-      <h2 class="main-title">Explora nuestro menú 🍽️</h2>
+        <!-- Hero Section igual al index para mantener coherencia -->
+        <section class="hero">
+            <h2 class="main-title">¿Qué se te antoja hoy?</h2>
+            <p>Explora nuestras categorías y encuentra el sabor perfecto para tu momento.</p>
+        </section>
 
-      <!-- Cuadrícula de productos -->
-      <div class="product-grid">
-        <!-- Tarjeta 1: Hamburguesa -->
-        <div class="card">
-          <!-- Imagen del producto -->
-          <img src="/img/burger.jpg" alt="Burger Deluxe">
-          <div class="card-content">
-            <h3>Burger Deluxe</h3>
-            <p class="description">Jugosa hamburguesa artesanal con carne premium, queso fundido y vegetales frescos en pan brioche.</p>
-            <p class="info">📍 El Corral - Sucursal Norte</p>
-            <!-- Precio destacado -->
-            <span class="price">$25.000</span>
-            <!-- Label vinculado al input oculto para "activar" el producto en el carrito -->
-            <a for="menu-item1" class="btn-add" href="/views/user/detalle-hamburguesa.html">Agregar al carrito</a>
-          </div>
-        </div>
+        <!-- Sección Top 4 Área Metropolitana -->
+        <section class="top-area">
+            <h2 class="section-subtitle">Top 4: Las mejores sabores en el Área Metropolitana</h2>
+            
+            <div class="menu-grid">
+                
+                <!-- CARD 1: BUCARAMANGA (Camachos) -->
+                <div class="card-horizontal">
+                    <div class="card-body">
+                        <div class="card-image">
+                            <img src="/img/burger.jpg" alt="Bucaramanga">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Camacho's Severa Burger</h3>
+                                <span class="badge bga">Bucaramanga</span>
+                            </div>
+                            <p class="description">Carne de res premium 150g, queso cheddar y pan artesanal. El ícono de la ciudad.</p>
+                            <div class="place-details">
+                                <p><i class="fas fa-map-marker-alt"></i> Cabecera del Llano</p>
+                                <p><i class="fas fa-phone"></i> +57 315 456 7890</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/views/public/carrito.html" class="btn-link">Agregar al carrito</a>
+                    </div>
+                </div>
 
-        <!-- Tarjeta 2: Pizza -->
-        <div class="card">
-          <img src="/img/pizza.jpg" alt="Pizza Margarita">
-          <div class="card-content">
-            <h3>Pizza Margarita</h3>
-            <p class="description">Clásica pizza italiana con salsa de tomate natural, mozzarella de búfala y hojas frescas de albahaca.</p>
-            <p class="info">📍 Domino's - Centro</p>
-            <span class="price">$28.000</span>
-            <a for="menu-item2" class="btn-add" href="/views/user/detalle-pizza.html">Agregar al carrito</a>
-          </div>
-        </div>
+                <!-- CARD 2: FLORIDABLANCA -->
+                <div class="card-horizontal">
+                    <div class="card-body">
+                        <div class="card-image">
+                            <img src="/img/pizza.jpg" alt="Floridablanca">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Domino's Pizza La Piccolina</h3>
+                                <span class="badge florida">Floridablanca</span>
+                            </div>
+                            <p class="description">Auténtica pizza italiana en horno de leña con ingredientes frescos de la región.</p>
+                            <div class="place-details">
+                                <p><i class="fas fa-map-marker-alt"></i> Cañaveral, Floridablanca</p>
+                                <p><i class="fas fa-phone"></i> +57 320 888 9900</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/views/public/carrito.html" class="btn-link">Agregar al carrito</a>
+                    </div>
+                </div>
 
-        <!-- Tarjeta 3: Sushi -->
-        <div class="card">
-          <img src="/img/Sushi.png" alt="Sushi Rolls">
-          <div class="card-content">
-            <h3>Sushi Rolls</h3>
-            <p class="description">Combinación de rolls de autor con pescado fresco del día, aguacate y un toque de salsa anguila.</p>
-            <p class="info">📍 Sushi Garden - Usaquén</p>
-            <span class="price">$32.000</span>
-            <a for="menu-item3" class="btn-add" href="/views/user/detalle-sushi.html">Agregar al carrito</a>
-          </div>
-        </div>
+                <!-- CARD 3: PIEDECUESTA -->
+                <div class="card-horizontal">
+                    <div class="card-body">
+                        <div class="card-image">
+                            <img src="/img/pastas.png" alt="Piedecuesta">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Parrilla La Mansión</h3>
+                                <span class="badge piede">Piedecuesta</span>
+                            </div>
+                            <p class="description">Especialistas en cortes de carne madurados y platos típicos santandereanos.</p>
+                            <div class="place-details">
+                                <p><i class="fas fa-map-marker-alt"></i> Sector Guatiguará</p>
+                                <p><i class="fas fa-phone"></i> +57 300 222 3344</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/views/public/carrito.html" class="btn-link">Agregar al carrito</a>
+                    </div>
+                </div>
 
-        <!-- Tarjeta 4: Pasta -->
-        <div class="card">
-          <img src="/img/pasta.jpg" alt="Pasta Carbonara">
-          <div class="card-content">
-            <h3>Pasta Carbonara</h3>
-            <p class="description">Espagueti artesanal servido con auténtica salsa carbonara, panceta crujiente y queso pecorino.</p>
-            <p class="info">📍 Camachos Pasta Bar</p>
-            <span class="price">$26.000</span>
-            <a for="menu-item4" class="btn-add" href="/views/user/detalle-pasta.html">Agregar al carrito</a>
-          </div>
-        </div>
-      </div>
+                <!-- CARD 4: GIRÓN -->
+                <div class="card-horizontal">
+                    <div class="card-body">
+                        <div class="card-image">
+                            <img src="/img/sushi.png" alt="Girón">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3>Portal del Sabor</h3>
+                                <span class="badge giron">Girón</span>
+                            </div>
+                            <p class="description">Fusión de comida internacional en el corazón del Monumento Nacional.</p>
+                            <div class="place-details">
+                                <p><i class="fas fa-map-marker-alt"></i> Casco Antiguo, Girón</p>
+                                <p><i class="fas fa-phone"></i> +57 310 555 6677</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/views/public/carrito.html" class="btn-link">Agregar al carrito</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </main>
 
-    <!-- PIE DE PÁGINA (Footer unificado) -->
+ <!-- PIE DE PÁGINA (Footer unificado) -->
     <footer>
         <!-- Columna de recomendaciones -->
         <div class="footer-col">

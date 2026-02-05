@@ -1,132 +1,305 @@
-/*ACTUALIZADO*/
-/*Aqui se van a importar los otros archivos css para que se apliquen los estilos en la pagina*/
-@import url('');
+@import url('/css/public/menu.css');
+@import url('/css/public/tienda.css');
 
-/*Aqui se va a aplicar la Modularizacion y
-En este archivo solo debe contener lo que se va a repetir o reutilizar en todas las vistas,
-como el (Headeer, Footer, Tipografias) */
+/* VARIABLES Y CONFIGURACIÓN BÁSICA */
+:root {
+    --primary-color: #ff6b6b;    /* Rojo suave para comida */
+    --secondary-color: #4ecdc4;  /* Color de acento */
+    --dark-color: #2d3436;       /* Gris muy oscuro para textos */
+    --light-bg: #f9f9f9;         /* Fondo gris claro */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
 
-/* Reset básico para consistencia de la pagina,
-esto es para que cargen los nuevos estilos a la pagina */
 * {
     margin: 0;
     padding: 0;
-    /* Fundamental para que los tamaños sean iguales en todo lado */
-    box-sizing: border-box; 
-}
-
-/* Esto es para que no aparezca el scroll de la parte de abajo
-que no deberia aparecer y solo debe aparecer en la parte derecha de la pagina */
-html, body {
-    /*Esto es para que tome toda la imagen para que no aparezca el scroll*/
-    width: 100%;
-    /* Evita scrolls horizontales inesperados en la parte de abajo de la pagina*/
-    overflow-x: hidden; 
-}
-
-/* Aqui se va a manejar el menu hamburguesa para ocultar los enlaces o menu de navegacion
-del menu en dispositivos moviles y pantallas pequeñas. */
-
-/* Menu Hamburguesa */
-
-/* Reset y Base (Configuraciones iniciales) */
-* {
-    /*Se incluye el padding y el borde en el ancho total del elemento
-    para que no crezaca inesperadamente*/
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/*Aqui para darle estilos al body para reutilizarlos en todas las vistas*/
 body {
-    /*Se define la fuente principal, si no existe, el tipo de letra
-    se esta usando Arial o cualquier sin serifa */
-    font-family: 'Segoe UI', Arial, sans-serif;
-    /*Quita los margenes por defecto del navegador*/
-    margin: 0;
-    /*Color de fondo casi blanco para el fondo*/
-    color: #fdfdfd;
-    /*color de texto gris oscuro casi negro*/
-    color: #333;
-    /*Se evite que aparezca la barra de desplazamiento horizontal*/
-    overflow: hidden;
+    background-color: var(--light-bg);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+ 
+/*INDEX.HTML  Y LO QUE ES LA BARRA DE NAVEGACIÓN, EL FOOTER, 
+MEDIA QUERIES SE  REUTILIZAN DESDE AQUI IMPORTANDOLAS*/
+
+/* BARRA DE NAVEGACIÓN (NAVBAR) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/*Header esto es el encabezado*/
-header {
-    /*Esto es para el fondo naranja suave*/
-    background-color: #ef8d4d;
-    /*Espacio interno: 1rem arriba/abajo, 4rem inzquierda/derecha*/
-    padding: 1rem 4rem;
-    /*Activa flexbox para alinear elementos*/
+.navbar__logo {
     display: flex;
-    /*Separa el logo de la navegacion (uno a cada extremo)*/
+    align-items: center;
+}
+
+.navbar__logo h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.navbar__menu a {
+    text-decoration: none;
+    color: var(--dark-color);
+    margin-left: 20px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.navbar__menu a:hover, .navbar__menu a.active {
+    color: var(--primary-color);
+}
+
+/* =========================================
+   SECCIÓN HERO (BANNER PRINCIPAL)
+   ========================================= */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* =========================================
+   CUADRÍCULA DE PRODUCTOS (CARDS)
+   ========================================= */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* --- Ajustes en las tarjetas (Cards) --- */
+
+/* Contenedor principal de la card */
+.card--horizontal {
+    display: flex;
+    flex-direction: column; /* Alineación vertical para que el footer quede abajo */
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    max-width: 900px; /* Ancho máximo sugerido */
+    margin: 20px auto;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+/* Cuerpo de la card (Imagen al lado de la info) */
+.card-body {
+    display: flex;
+    flex-direction: row; /* Aquí ocurre la magia de ponerlos al lado */
+    padding: 20px;
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+/* Contenedor de la imagen */
+.card-image {
+    flex: 0 0 200px; /* Ancho fijo para el área de la imagen */
+    margin-right: 25px;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Para que el logo no se corte */
+}
+
+/* Contenedor de la información */
+.card-content {
+    flex: 1; /* Ocupa el resto del espacio disponible */
+    text-align: left;
+}
+
+.card-header {
+    display: flex;
     justify-content: space-between;
-    /*Alinea verticalmente los elementos al centro*/
-    align-self: center;
-    /*Texto en color blanco*/
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.place-details {
+    border-top: 1px solid #f2f2f2;
+    padding-top: 10px;
+}
+
+.place-details p {
+    font-size: 0.85rem;
+    margin: 5px 0;
+    color: #555;
+}
+
+.place-details i {
+    color: #ff6b6b;
+    margin-right: 8px;
+}
+
+/* Footer con el link abajo */
+.card-footer {
+    padding: 0 20px 20px 20px; /* Espaciado interno */
+}
+
+.btn-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+    background: #ff6b6b;
     color: white;
 }
 
-/*Este es para la barra de navegacion */
-.navbar {
-    /*Este es el color principal que etiene la barra de navegacion*/
-    /*en el proyecto original se llama --color-principal*/
-    background-color: var(--color-naranja);
-    /*Este es para cambiar el color de titulo de la aplicacion web*/
-    color: var(--color-blanco);
-    /*esto es par aque a barra de navegacion
-    se posiciones al lado del titulo*/
+/* --- RESPONSIVO PARA MÓVILES --- */
+@media (max-width: 600px) {
+    .card-body {
+        flex-direction: column; /* Se apilan en celular */
+        text-align: center;
+    }
+    
+    .card-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+        flex: 0 0 120px; /* Imagen más pequeña en móvil */
+    }
+
+    .card-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* =========================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================= */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 50px 5% 20px;
     display: flex;
-    /*esto es para posicionar la barra de navegacion al lado derecho*/
+    flex-wrap: wrap;
     justify-content: space-between;
-    /*esto es para entrar la barra de navegacion*/
-    align-items: center;
-    /*esto es para darle espacio a la barra de navegacion*/
-    padding: 1rem 2rem;
-    /*Si o caben, se pasan a la siguiente fila*/
-    flex-wrap: wrap;
+    margin-top: 50px;
 }
 
-/*Aqui vamos a darle forma, tamaño y letra del logo*/
-.logo {
-    /*esto es para que el logo es ajuste al tamaño del navegador*/
-    display: flex;
-    /*esto es para centralo*/
-    align-items: center;
-    /*esto es para darle un espaciado*/
-    gap:0.75rem;
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
 }
 
-/*Est es para la imagen del logo*/
-.logo img {
-    /*esto es para darle un tamaño al logo*/
-    height: 40px;
+.footer-col h4 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
 }
 
-/*Esto es para la barra de navegacion*/
-.navbar__menu {
-    /*esto es para que el menu de navegacion tenga un tamaño*/
-    display: flex;
-    /*Si o caben, se pasan a la siguiente fila*/
-    flex-wrap: wrap;
-    /*esto es para darles un espacio a cda mennu de navegacion*/
-    gap:1.25rem;
+.footer-col ul {
+    list-style: none;
 }
 
-/*esto es para las opciones del menu de navegacion*/
-.navbar__menu a {
-    /*esto es para aparezca la linea en la cual esta posicionada la vista*/
-    position: relative;
-    /*esto es para cambiarle el color a las opciones del menu de navegacion*/
-    color: var(--color-blanco);
-    /*esto es para quitarle la linea que tiene por predeterminado las opciones del menu de navegacion*/
-    text-decoration: none;
-    /*no se lo que hace*/
-    font-weight: 500;
-    /*no se lo que hace*/
-    transition: var(--transicion);
-    /*esto es para el espciado de las opciones a la linea que identifica en qeu posicion esta la vista*/
-    padding-bottom: 4px;
+.footer-col ul li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
+.footer-col ul li:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
 
+.socials i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    margin-top: 10px;
+    color: var(--white);
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   RESPONSIVIDAD (MÓVILES)
+   ========================================= */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar__menu {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar__menu a {
+        margin: 5px 10px;
+        font-size: 0.9rem;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .socials i {
+        margin: 10px;
+    }
+}

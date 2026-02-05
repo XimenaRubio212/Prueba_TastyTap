@@ -1,0 +1,226 @@
+/* --- NAVBAR (Igual a tus fotos) --- */
+.navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 5%;
+     background: var(--white); 
+     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.navbar__logo h1 {
+     color: var(--primary); 
+     font-size: 1.5rem; 
+    }
+    
+.navbar__menu a { 
+    text-decoration: none; 
+    color: #555; 
+    margin-left: 20px; 
+    font-weight: 500; 
+}
+
+.navbar__menu a.active { 
+    color: var(--primary); 
+}
+
+/* --- CONTENEDOR TIENDA --- */
+.store-container {
+    display: flex;
+    min-width: 100px;
+    margin: 30px auto;
+    gap: 30px;
+    padding: 0 100px;
+}
+
+/* --- BARRA LATERAL DE FILTROS --- */
+.filters-sidebar {
+    flex: 0 0 280px;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    height: fit-content;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.filter-title { 
+    font-size: 1.2rem; 
+    margin-bottom: 25px; 
+    border-bottom: 2px solid var(--bg); 
+    padding-bottom: 10px; 
+}
+
+.filter-group { 
+    margin-bottom: 25px;
+}
+
+.filter-group h3 { 
+    font-size: 1rem; 
+    margin-bottom: 15px; 
+    color: #666; 
+}
+
+/* Estilo de Checkboxes personalizados */
+.container-check {
+    display: block; 
+    position: relative;
+    padding-left: 30px; 
+    margin-bottom: 12px;
+    cursor: pointer; 
+    font-size: 0.9rem; 
+    user-select: none;
+}
+
+.container-check input { 
+    position: absolute; 
+    opacity: 0; 
+    cursor: pointer; 
+    height: 0; 
+    width: 0; 
+}
+
+.checkmark {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 20px; 
+    width: 20px;
+    background-color: #ee0000; 
+    border-radius: 4px;
+}
+.container-check:hover input ~ .checkmark { 
+    background-color: #ccc; 
+}
+.container-check input:checked ~ .checkmark { 
+    background-color: var(--primary); 
+}
+
+.btn-apply {
+    width: 100%; 
+    padding: 12px; 
+    background: var(--primary); 
+    color: white;
+    border: none; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+.btn-apply:hover { 
+    background: #fa5252; 
+}
+
+/* --- CUADRÍCULA DE PRODUCTOS --- */
+.store-content { 
+    flex: 1; 
+}
+
+.store-header { 
+    margin-bottom: 25px; 
+}
+
+.store-header h2 { 
+    font-size: 1.8rem;
+}
+ 
+.store-header p { 
+    color: #888; 
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+}
+.product-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+}
+
+.product-img { 
+    position: relative; 
+    height: 180px; 
+}
+
+.product-img img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+}
+
+.price-tag {
+    position: absolute; 
+    bottom: 10px; 
+    right: 10px; 
+    background: var(--dark);
+    color: white; 
+    padding: 5px 12px; 
+    border-radius: 8px; 
+    font-weight: bold;
+}
+
+.product-info { 
+    padding: 20px; 
+}
+
+.category-info { 
+    margin-bottom: 10px; 
+    display: flex; 
+    gap: 5px; 
+}
+
+.tag-city { 
+    font-size: 0.7rem; 
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 2px 8px; 
+    border-radius: 4px; 
+    font-weight: bold; 
+}
+
+.tag-food { 
+    font-size: 0.7rem;
+    background: #fff3e0; 
+    color: #f57c00; 
+    padding: 2px 8px; 
+    border-radius: 4px; 
+    font-weight: bold; 
+}
+
+.product-info h3 { 
+    font-size: 1.2rem; 
+    margin-bottom: 8px; 
+}
+
+.product-info .description { 
+    font-size: 0.85rem; 
+    color: #666;
+    margin-bottom: 20px; 
+    line-height: 1.4; 
+}
+
+.btn-add-cart {
+    width: 100%; 
+    padding: 10px; 
+    border: 1.5px solid var(--primary);
+    background: transparent; 
+    color: var(--primary); 
+    font-weight: bold;
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+.btn-add-cart:hover { 
+    background: var(--primary); 
+    color: white;
+}

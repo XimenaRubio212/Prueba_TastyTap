@@ -1,166 +1,96 @@
-<!-- Se declara que este documento es HTML5, asegurando que el navegador lo reconozca -->
+<!-- se declara el tipo de documento como HTML5, asegurando que el navegador lo reconozca -->
 <!DOCTYPE html>
 <!-- Etiqueta del documento que indica el idioma de la página -->
 <html lang="es">
 <!-- Etiqueta de cabecera del documento -->
 <head>
-  <!-- Sección de metadatos e importaciones que no se ven directamente en la página -->
-  <meta charset="UTF-8">
-  <!-- Etiqueta para configurar la vista del dispositivo, esto permite que la página se adapte a diferentes dispositivos -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Etiqueta para establecer el título de la página en la pestaña del navegador -->
-  <title>TastyTap | Carrito</title>
-
-  <!-- Importación de la carpeta css/utils llamando a Base.css para definir las variables globales -->
-  <link rel="stylesheet" href="/css/utils/Base.css">
-  <!-- Importación de normalización para asegurar consistencia visual entre navegadores -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <!-- Estilos generales de la aplicación -->
-  <link rel="stylesheet" href="/css/style.css">
-  <!-- Estilos específicos para la visualización y maquetación del carrito de compras -->
-  <link rel="stylesheet" href="/css/view/carrito.css">
-  <!-- Importación de la librería de iconos Font Awesome para redes sociales y elementos de interfaz -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Sección de metadatos e importaciones que no se ven directamente en la página -->
+    <meta charset="UTF-8">
+    <!-- Etiqueta para configurar la vista del dispositivo, esto permite que la página se adapte a diferentes dispositivos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Etiqueta para establecer el título de la página -->
+    <title>TastyTap | Carrito</title>
+    <!-- Importación de estilos base y variables para la primera vista que ve el usuario -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Importación de iconos de Font Awesome del los iconos del footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <!-- Se cierra la etiqueta de cabecera del documento -->
 </head>
 
-<!-- Este es el cuerpo del documento que contiene toda la interfaz del carrito -->
+<!-- este es el cuerpo del documento que contiene todo el contenido que el usuario ve -->
 <body>
-  <!-- Contenedor principal que envuelve toda la página para un mejor control del layout -->
-  <div class="main__container">
-    
-    <!-- Barra de navegación superior estática con el logo y el menú principal -->
+
+    <!-- barra de navegación superior estática que contiene el logo y el menú principal -->
     <header class="navbar">
-      <!-- Contenedor del logo visual y el nombre textual de la marca -->
-      <div class="navbar__logo">
-        <!-- Imagen del logo con texto alternativo para garantizar la accesibilidad -->
-        <img src="/img/TastyTap.png" alt="Logo TastyTap">
-        <!-- Nombre de la marca como encabezado principal -->
-        <h1>TastyTap</h1>
-      </div>
-      <!-- Menú de navegación con enlaces a las secciones disponibles para el usuario -->
-      <nav class="navbar__menu">
-        <a href="/index.html">Inicio</a>
-        <a href="/views/user/menu.html">Menú</a>
-        <a href="/views/user/tienda.html">Tienda</a>
-        <!-- Enlace activo que resalta que el usuario se encuentra en el carrito de compras -->
-        <a href="/views/user/carrito.html" class="active">Carrito</a>
-        <a href="/views/user/perfil.html">Perfil</a>
-      </nav>
+        <!-- logo de la barra de navegación -->
+        <div class="navbar__logo">
+            <!-- imagen del logo con su respectivo texto alternativo -->
+            <img src="/img/TastyTap.png" alt="Logo TastyTap" style="height: 30px; vertical-align: middle; margin-right: 10px;">
+            <!-- nombre de la marca como encabezado -->
+            <h1>TastyTap</h1>
+        </div>
+        <!-- menú de navegación con enlaces a las secciones de usuario logueado -->
+        <nav class="navbar__menu">
+            <!-- Enlace a la página de inicio la clase active se utiliza para resaltar el enlace actual -->
+            <a href="/index.html">Inicio</a>
+            <!-- Enlace a la vista de menu de productos disponibles -->
+            <a href="/views/public/menu.html">Menú</a>
+            <!-- Enlace a la vista de la tienda, donde se muestran los productos y sus detalles del lugar -->
+            <a href="/views/public/tienda.html">Tienda</a>
+            <!-- Enlace a la vista carrito, donde el usuario solo podra agregar pero no podra comprar,
+            porque al intentar comprar los productos lo va a redireccionar al registro y
+            cuando el cliente se registra lo va a redirigir al login para que ingrese y pueda hacer la compra -->
+            <a href="/views/public/carrito.html" class="active">Carrito</a>
+            <!--  Enlace a la vista de login  de sesión para usuarios -->
+            <a href="/views/public/login.html">Login</a>
+            <!-- se cierra la etiqueta de la barra de navegación -->
+        </nav>
     </header>
 
-    <!-- Sección principal que alberga el listado de productos seleccionados -->
-    <main class="main">
-      <!-- Contenedor general que centra y organiza el contenido del carrito -->
-      <div class="container">
-        <!-- Título principal de la sección -->
-        <h2 class="section__title">Tu Carrito 🛒</h2>
-
-        <!-- Contenedor en formato cuadrícula para organizar los productos añadidos -->
-        <div class="carta__grid">
-          
-          <!-- Primera tarjeta de producto: Burger Deluxe -->
-          <div class="carta__card">
-            <!-- Imagen miniatura del producto -->
-            <img src="/img/burger.jpg" alt="Hamburguesa" class="carta__imagen">
-            <!-- Contenedor con la información textual del producto -->
-            <div class="carta__detalles">
-              <h4 class="carta__titulo">Burger Deluxe</h4>
-              <!-- Precio unitario del producto -->
-              <p class="carta__precio">$25.000 COP</p>
-            </div>
-            <!-- Selector de cantidad para que el usuario defina cuántas unidades desea -->
-            <div class="carta__cantidad">
-              <input type="number" value="1" min="1" class="cantidad__input">
-            </div>
-          <!-- Se cierra la tarjeta del producto -->
-          </div>
-
-          <!-- Segunda tarjeta de producto: Burger Vegano -->
-          <div class="carta__card">
-            <img src="/img/burger.jpg" alt="Hamburguesa Vegana" class="carta__imagen">
-            <div class="carta__detalles">
-              <h4 class="carta__titulo">Burger Vegano</h4>
-              <p class="carta__precio">$22.000 COP</p>
-            </div>
-            <div class="carta__cantidad">
-              <input type="number" value="2" min="1" class="cantidad__input">
-            </div>
-          </div>
-
-          <!-- Bloque resumen que muestra el cálculo final de la compra -->
-          <div class="carta__total">
-            <!-- Texto destacado con el monto total a pagar -->
-            <strong>Total a pagar: $69.000 COP</strong>
-          </div>
-
-          <!-- Botón de acción para proceder al proceso de pago -->
-          <button class="btn btn__pago">Pagar por Transferencia</button>
-
-        <!-- Se cierra la cuadrícula del carrito -->
-        </div>
-      <!-- Se cierra el contenedor del main -->
-      </div>
+    <!-- Contenido principal de la página de tienda -->
+    <main>
+        <!-- SOLO FALTA COLOCAR EL CONTENIDO -->
     </main>
 
-    <!-- Pie de página unificado con información corporativa y de contacto -->
-    <footer class="footer">
-      <!-- Contenedor para alinear las columnas del pie de página -->
-      <div class="container">
-        <!-- Contenedor en formato cuadrícula para las 4 secciones informativas -->
-        <div class="footer__grid">
-          
-          <!-- Sección: Restaurantes destacados -->
-          <div class="restaurantes">
-            <h3>Restaurantes Top</h3>
-            <a href="#">Camachos</a>
-            <a href="#">Domino's</a>
-            <a href="#">KFC</a>
-            <a href="#">Mc Donald's</a>
-            <a href="#">El corral</a>
-            <a href="#">Dunkin' Donuts</a>
-          </div>
-
-          <!-- Sección: Captación de socios y negocios -->
-          <div class="unete">
-            <h3>Únete a Tasty Tap</h3>
-            <a href="#">Registra tu restaurante</a>
-            <a href="#">Registra tu local</a>
-            <a href="#">Haz crecer tu marca</a>
-            <a href="#">Promociona tu negocio</a>
-          </div>
-
-          <!-- Sección: Presencia en redes sociales -->
-          <div class="redes">
-            <h3>Síguenos</h3>
-            <div class="social">
-              <!-- Enlaces con iconos representativos de cada plataforma -->
-              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    <!-- PIE DE PÁGINA (Footer unificado) -->
+    <footer>
+        <!-- Columna de recomendaciones -->
+        <div class="footer-col">
+            <h4>Restaurantes Top</h4>
+            <ul>
+                <li>Camachos</li>
+                <li>Domino's</li>
+                <li>KFC</li>
+                <li>Mc Donald's</li>
+            </ul>
+        </div>
+        <!-- Columna para socios -->
+        <div class="footer-col">
+            <h4>Únete a Tasty Tap</h4>
+            <ul>
+                <li>Registra tu restaurante</li>
+                <li>Registra tu local</li>
+                <li>Promociona tu negocio</li>
+            </ul>
+        </div>
+        <!-- Columna de redes sociales -->
+        <div class="footer-col">
+            <h4>Síguenos</h4>
+            <div class="socials">
+                <i class="fab fa-facebook"></i> Facebook<br>
+                <i class="fab fa-instagram"></i> Instagram<br>
+                <i class="fab fa-tiktok"></i> TikTok
             </div>
-          </div>
-
-          <!-- Sección: Datos de contacto y ubicación -->
-          <div class="contacto">
-            <h3>Contacto</h3>
+        </div>
+        <!-- Columna de contacto físico/digital -->
+        <div class="footer-col">
+            <h4>Contacto</h4>
             <p>📍 Calle 123 #45-67, Bogotá, Colombia</p>
             <p>📞 +57 320 555 1234</p>
             <p>✉️ contacto@tastytap.com</p>
-          </div>
-
-        <!-- Se cierra la cuadrícula del footer -->
         </div>
-
-        <!-- Franja final para créditos de autoría y derechos reservados -->
-        <div class="footer__bottom">
-          <p>© 2025 TastyTap — Todos los derechos reservados 🍴</p>
-        </div>
-      </div>
     </footer>
 
-  <!-- Se cierra el contenedor principal -->
-  </div>
 <!-- Cierre del cuerpo de la página -->
 </body>
 <!-- Cierre del documento HTML -->
