@@ -25,7 +25,7 @@
         <!-- logo de la barra de navegación -->
         <div class="navbar__logo">
             <!-- imagen del logo con su respectivo texto alternativo -->
-            <img src="/img/TastyTap.png" alt="Logo TastyTap" style="height: 30px; vertical-align: middle; margin-right: 10px;">
+            <img src="/img/TastyTap.png" alt="Logo TastyTap" style="height: 4rem; vertical-align: middle; margin-right: 10px;">
             <!-- nombre de la marca como encabezado -->
             <h1>TastyTap</h1>
         </div>
@@ -40,7 +40,67 @@
 
     <!-- Contenido principal de la página de tienda -->
     <main>
-        <!-- SOLO FALTA COLOCAR EL CONTENIDO -->
+        <!-- Sección Hero coherente con el resto del sitio -->
+        <section class="hero">
+            <h2 class="main-title">Únete a TastyTap</h2>
+            <p>Crea tu cuenta hoy y descubre los mejores sabores de tu ciudad.</p>
+        </section>
+
+        <!-- Contenedor del Formulario de Registro -->
+        <section class="login-section"> <!-- Reutilizamos la clase de sección para consistencia -->
+            <div class="login-card" style="max-width: 500px;"> <!-- Un poco más ancha para el registro -->
+                <div class="login-header">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Crear Cuenta</h3>
+                </div>
+
+                <form action="/views/public/login.html" class="login-form">
+                    
+                    <!-- Campo: Nombre Completo -->
+                    <div class="input-group">
+                        <label for="fullname"><i class="fas fa-user"></i> Nombre Completo</label>
+                        <input type="text" id="fullname" placeholder="Tu nombre y apellido" required>
+                    </div>
+
+                    <!-- Campo: Correo Electrónico -->
+                    <div class="input-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Correo Electrónico</label>
+                        <input type="email" id="email" placeholder="correo@ejemplo.com" required>
+                    </div>
+
+                    <!-- Campo: Teléfono (Importante para pedidos) -->
+                    <div class="input-group">
+                        <label for="phone"><i class="fas fa-phone"></i> Teléfono Móvil</label>
+                        <input type="tel" id="phone" placeholder="Ej: 320 123 4567" required>
+                    </div>
+
+                    <!-- Fila de Contraseñas -->
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <div class="input-group" style="flex: 1; min-width: 200px;">
+                            <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                            <input type="password" id="password" placeholder="********" required>
+                        </div>
+                        <div class="input-group" style="flex: 1; min-width: 200px;">
+                            <label for="confirm-password"><i class="fas fa-shield-alt"></i> Confirmar</label>
+                            <input type="password" id="confirm-password" placeholder="********" required>
+                        </div>
+                    </div>
+
+                    <!-- Términos y Condiciones -->
+                    <div class="form-options" style="justify-content: flex-start; gap: 10px;">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms" style="font-size: 0.85rem;">Acepto los <a href="#">Términos y Condiciones</a></label>
+                    </div>
+
+                    <!-- Botón de Registro -->
+                    <button type="submit" class="btn-login-submit">Registrarme</button>
+                    
+                    <div class="login-footer">
+                        <p>¿Ya tienes una cuenta? <a href="/views/public/login.html">Inicia sesión aquí</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
 
     <!-- PIE DE PÁGINA (Footer unificado) -->
