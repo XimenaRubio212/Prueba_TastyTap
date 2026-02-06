@@ -49,7 +49,44 @@
 
     <!-- Contenido principal de la página de tienda -->
     <main>
-        <!-- SOLO FALTA COLOCAR EL CONTENIDO -->
+        <section class="hero">
+            <h2 class="main-title">Bienbenido al Login</h2>
+            <p>Ingresa tus datos para iniciar sesión y disfrutar del mejor sabor.</p>
+        </section>
+
+        <!-- Contenedor del Formulario -->
+        <section class="login-section">
+            <div class="login-card">
+                <div class="login-header">
+                    <i class="fas fa-user-circle"></i>
+                    <h3>Iniciar Sesión</h3>
+                </div>
+
+                <form action="#" class="login-form">
+                    <div class="input-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Correo Electrónico</label>
+                        <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                        <input type="password" id="password" placeholder="********" required>
+                    </div>
+
+                    <div class="form-options">
+                        <label><input type="checkbox"> Recordarme</label>
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <!-- Al hacer clic, redirigiría a la tienda o inicio (Simulación) -->
+                    <button type="submit" class="btn-login-submit">Ingresar</button>
+                    
+                    <div class="login-footer">
+                        <p>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
 
     <!-- PIE DE PÁGINA (Footer unificado) -->

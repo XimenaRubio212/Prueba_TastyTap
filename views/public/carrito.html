@@ -1,58 +1,97 @@
-<!-- se declara el tipo de documento como HTML5, asegurando que el navegador lo reconozca -->
 <!DOCTYPE html>
-<!-- Etiqueta del documento que indica el idioma de la página -->
 <html lang="es">
-<!-- Etiqueta de cabecera del documento -->
 <head>
-    <!-- Sección de metadatos e importaciones que no se ven directamente en la página -->
     <meta charset="UTF-8">
-    <!-- Etiqueta para configurar la vista del dispositivo, esto permite que la página se adapte a diferentes dispositivos -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Etiqueta para establecer el título de la página -->
     <title>TastyTap | Carrito</title>
-    <!-- Importación de estilos base y variables para la primera vista que ve el usuario -->
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Importación de iconos de Font Awesome del los iconos del footer -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<!-- Se cierra la etiqueta de cabecera del documento -->
 </head>
-
-<!-- este es el cuerpo del documento que contiene todo el contenido que el usuario ve -->
 <body>
 
-    <!-- barra de navegación superior estática que contiene el logo y el menú principal -->
+    <!-- INPUTS OCULTOS PARA CONTROLAR LA VISIBILIDAD DE LOS PRODUCTOS -->
+    <input type="checkbox" id="prod1" class="cart-logic" checked>
+    <input type="checkbox" id="prod2" class="cart-logic" checked>
+
     <header class="navbar">
-        <!-- logo de la barra de navegación -->
         <div class="navbar__logo">
-            <!-- imagen del logo con su respectivo texto alternativo -->
-            <img src="/img/TastyTap.png" alt="Logo TastyTap" style="height: 30px; vertical-align: middle; margin-right: 10px;">
-            <!-- nombre de la marca como encabezado -->
+            <img src="/img/TastyTap.png" alt="Logo TastyTap" style="height: 30px;">
             <h1>TastyTap</h1>
         </div>
-        <!-- menú de navegación con enlaces a las secciones de usuario logueado -->
         <nav class="navbar__menu">
-            <!-- Enlace a la página de inicio la clase active se utiliza para resaltar el enlace actual -->
             <a href="/index.html">Inicio</a>
-            <!-- Enlace a la vista de menu de productos disponibles -->
             <a href="/views/public/menu.html">Menú</a>
-            <!-- Enlace a la vista de la tienda, donde se muestran los productos y sus detalles del lugar -->
             <a href="/views/public/tienda.html">Tienda</a>
-            <!-- Enlace a la vista carrito, donde el usuario solo podra agregar pero no podra comprar,
-            porque al intentar comprar los productos lo va a redireccionar al registro y
-            cuando el cliente se registra lo va a redirigir al login para que ingrese y pueda hacer la compra -->
             <a href="/views/public/carrito.html" class="active">Carrito</a>
-            <!--  Enlace a la vista de login  de sesión para usuarios -->
             <a href="/views/public/login.html">Login</a>
-            <!-- se cierra la etiqueta de la barra de navegación -->
         </nav>
     </header>
 
-    <!-- Contenido principal de la página de tienda -->
     <main>
-        <!-- SOLO FALTA COLOCAR EL CONTENIDO -->
+        <section class="hero">
+            <h2 class="main-title">Tu Pedido Actual</h2>
+            <p>Revisa tus productos y finaliza tu compra.</p>
+        </section>
+
+        <section class="cart-section">
+            <div class="cart-container">
+                
+                <!-- LISTA DE PRODUCTOS (CONTROLADA POR CSS) -->
+                <div class="cart-items">
+                    
+                    <!-- Producto 1 -->
+                    <div class="cart-item-card card-prod1">
+                        <img src="/img/burger.jpg" alt="Burger">
+                        <div class="item-info">
+                            <h4>Camacho's Severa</h4>
+                            <p>Bucaramanga</p>
+                            <span class="item-price">$22.000</span>
+                        </div>
+                        <label for="prod1" class="btn-remove"><i class="fas fa-trash"></i></label>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="cart-item-card card-prod2">
+                        <img src="/img/pizza.jpg" alt="Pizza">
+                        <div class="item-info">
+                            <h4>Pizza de la Casa</h4>
+                            <p>Floridablanca</p>
+                            <span class="item-price">$35.000</span>
+                        </div>
+                        <label for="prod2" class="btn-remove"><i class="fas fa-trash"></i></label>
+                    </div>
+
+                    <!-- Mensaje si el carrito se queda vacío -->
+                    <div class="empty-msg">
+                        <p>No hay productos en tu carrito.</p>
+                        <a href="/views/public/tienda.html">Volver a la Tienda</a>
+                    </div>
+                </div>
+
+                <!-- RESUMEN DE COMPRA -->
+                <aside class="cart-summary">
+                    <h3>Resumen</h3>
+                    <div class="summary-line">
+                        <span>Subtotal</span>
+                        <span class="sub-total">$57.000</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Envío</span>
+                        <span style="color: #2ecc71;">Gratis</span>
+                    </div>
+                    <hr>
+                    <div class="summary-line total">
+                        <span>Total</span>
+                        <span class="final-price">$57.000</span>
+                    </div>
+                    <!-- Redirección obligatoria a Login como pediste -->
+                    <a href="/views/public/login.html" class="btn-checkout">Finalizar Compra</a>
+                </aside>
+            </div>
+        </section>
     </main>
 
-    <!-- PIE DE PÁGINA (Footer unificado) -->
+        <!-- PIE DE PÁGINA (Footer unificado) -->
     <footer>
         <!-- Columna de recomendaciones -->
         <div class="footer-col">
@@ -91,7 +130,5 @@
         </div>
     </footer>
 
-<!-- Cierre del cuerpo de la página -->
 </body>
-<!-- Cierre del documento HTML -->
 </html>
