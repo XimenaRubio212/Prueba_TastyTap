@@ -62,6 +62,16 @@ body {
     color: var(--primary);
 }
 
+/* --- HERO --- */
+.hero {
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    text-align: center;
+}
+
 /* =========================================
    3. ESTRUCTURA DE LA TIENDA (LAYOUT)
    ========================================= */
@@ -75,7 +85,7 @@ body {
 
 /* --- BARRA LATERAL DE FILTROS --- */
 .filters-sidebar {
-    flex: 0 0 280px;
+    flex: 0 0 230px;
     background: var(--white);
     padding: 25px;
     border-radius: 20px;
@@ -183,13 +193,13 @@ body {
 }
 
 .store-header {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
+    gap: 10px;
 }
 
 .product-card {
@@ -276,9 +286,9 @@ body {
     position: absolute;
     /* Escondido por defecto */
     right: -350px; 
-    top: 130px;
+    top: 350px;
     border-radius: 12px;
-    bottom: 250px;
+    bottom: 30px;
     width: 320px;
     background: var(--white);
     box-shadow: -10px 0 30px rgba(0,0,0,0.1);
