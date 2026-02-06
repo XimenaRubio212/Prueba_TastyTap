@@ -67,7 +67,7 @@ body {
    ========================================= */
 .store-container {
     display: flex;
-    max-width: 1300px;
+    max-width: 2000px;
     margin: 30px auto;
     gap: 30px;
     padding: 0 20px;
@@ -267,19 +267,23 @@ body {
    ========================================= */
 
 /* Inputs ocultos */
-.cart-control { display: none; }
+.cart-control { 
+    display: none; 
+}
 
 /* Sidebar del Carrito */
 .sidebar {
-    position: fixed;
-    right: -350px; /* Escondido por defecto */
-    top: 0;
-    bottom: 0;
+    position: absolute;
+    /* Escondido por defecto */
+    right: -350px; 
+    top: 130px;
+    border-radius: 12px;
+    bottom: 250px;
     width: 320px;
     background: var(--white);
     box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-    padding: 40px 25px;
-    z-index: 2000;
+    padding: 20px 25px;
+    z-index: 1000;
     transition: var(--transition);
 }
 
@@ -301,7 +305,9 @@ body {
     border-radius: 10px;
 }
 
-.cart-item b { color: var(--primary); }
+.cart-item b { 
+    color: var(--primary); 
+}
 
 /* --- ACTIVACIÓN POR CHECKBOX --- */
 
@@ -351,7 +357,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 3000;
-    transition: 0.5s;
+    transition: 0.1s;
 }
 
 .notice {
@@ -368,7 +374,7 @@ body {
 #burger2:checked ~ .notice-container,
 #burger3:checked ~ .notice-container,
 #burger4:checked ~ .notice-container {
-    animation: toastFade 3s forwards;
+    animation: toastFade 5s forwards;
 }
 
 @keyframes toastFade {
