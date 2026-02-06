@@ -10,6 +10,17 @@
 </head>
 <body>
 
+    <!-- INPUTS OCULTOS (Controlan el estado del carrito sin JS) -->
+    <input type="checkbox" id="burger1" class="cart-control">
+    <input type="checkbox" id="burger2" class="cart-control">
+    <input type="checkbox" id="burger3" class="cart-control">
+    <input type="checkbox" id="burger4" class="cart-control">
+
+    <!-- VENTANA EMERGENTE -->
+    <div class="notice-container">
+        <div class="notice">¡Producto añadido al carrito!</div>
+    </div>
+
     <header class="navbar">
         <div class="navbar__logo">
             <img src="/img/TastyTap.png" alt="Logo TastyTap" style="height: 4rem; vertical-align: middle; margin-right: 10px;">
@@ -81,8 +92,10 @@
                 <p>Mostrando resultados para el área metropolitana</p>
             </div>
 
+            <!-- ... (Inputs ocultos y Header se mantienen igual) ... -->
+
             <div class="products-grid">
-                <!-- Ejemplo Card 1 -->
+                <!-- Card 1 -->
                 <div class="product-card">
                     <div class="product-img">
                         <img src="/img/burger.jpg" alt="Hamburguesa">
@@ -96,12 +109,13 @@
                         <h3>Camacho's Severa</h3>
                         <p class="description">Carne artesanal, queso cheddar y vegetales frescos.</p>
                         <div class="card-footer">
-                            <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                            <!-- CAMBIO: button por label -->
+                            <label for="burger1" class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Añadir</label>
                         </div>
                     </div>
                 </div>
 
-                <!-- Ejemplo Card 2 -->
+                <!-- Card 2 -->
                 <div class="product-card">
                     <div class="product-img">
                         <img src="/img/pizza.jpg" alt="Pizza">
@@ -115,12 +129,12 @@
                         <h3>Pizzas de la Casa</h3>
                         <p class="description">Pepperoni premium con borde de queso derretido.</p>
                         <div class="card-footer">
-                            <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                            <label for="burger2" class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Añadir</label>
                         </div>
                     </div>
                 </div>
 
-                <!-- Ejemplo Card 3 -->
+                <!-- Card 3 -->
                 <div class="product-card">
                     <div class="product-img">
                         <img src="/img/Sushi.png" alt="Sushi">
@@ -134,12 +148,12 @@
                         <h3>Sakura Rolls</h3>
                         <p class="description">Fusión de salmón fresco con aguacate y salsa anguila.</p>
                         <div class="card-footer">
-                            <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                            <label for="burger3" class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Añadir</label>
                         </div>
                     </div>
                 </div>
 
-                <!-- Ejemplo Card 4 -->
+                <!-- Card 4 -->
                 <div class="product-card">
                     <div class="product-img">
                         <img src="/img/pastas.png" alt="Pastas">
@@ -153,14 +167,41 @@
                         <h3>Pastas de la Casa</h3>
                         <p class="description">Fusión de pastas italianas con carne madurada.</p>
                         <div class="card-footer">
-                            <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                            <label for="burger4" class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Añadir</label>
                         </div>
                     </div>
                 </div>
-
             </div>
+
+            <!-- ... (Sidebar con nombres actualizados) ... -->
+            <aside class="sidebar">
+                <h3>Tu Pedido</h3>
+                <div class="cart-list">
+                    <div class="cart-item item-1"><span>Camacho's Severa</span> <b>$22.000</b></div>
+                    <div class="cart-item item-2"><span>Pizzas de la Casa</span> <b>$35.000</b></div>
+                    <div class="cart-item item-3"><span>Sakura Rolls</span> <b>$28.000</b></div>
+                    <div class="cart-item item-4"><span>Pastas de la Casa</span> <b>$25.000</b></div>
+                </div>
+                <a href="/views/public/login.html" class="btn-checkout">Realizar Compra</a>
+                <p class="hint">Haz clic en añadir para quitar o poner</p>
+            </aside>
+
         </section>
     </main>
+
+    <!-- AVERIGUAR COMO HACER QEU FUNCIONES CON ESTOS BOTONES -->
+    <!-- PANEL LATERAL (RESUMEN CARRITO) -->
+    <aside class="sidebar">
+        <h3>Tu Pedido</h3>
+        <div class="cart-list">
+            <div class="cart-item item-1"><span>Burger Deluxe</span> <b>$25.000</b></div>
+            <div class="cart-item item-2"><span>Burger Vegano</span> <b>$22.000</b></div>
+            <div class="cart-item item-3"><span>Burger BBQ</span> <b>$28.000</b></div>
+            <div class="cart-item item-4"><span>Burger con Queso</span> <b>$24.000</b></div>
+        </div>
+        <a href="/views/public/" class="btn-checkout">Realizar Compra</a>
+        <p class="hint">Toca el producto de nuevo para quitarlo</p>
+    </aside>
 
     <!-- PIE DE PÁGINA (Footer unificado) -->
     <footer>
