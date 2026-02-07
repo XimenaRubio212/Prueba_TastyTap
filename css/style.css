@@ -3,6 +3,11 @@
 @import url('/css/public/carrito.css');
 @import url('/css/public/login.css');
 @import url('/css/public/registro.css');
+@import url('/css/public/detalle-producto.css');
+@import url('/css/client/Finalizar-compra.css');
+@import url('/css/client/historial-cliente.css');
+@import url('/css/client/detalle-pedido.css');
+
 
 /* VARIABLES Y CONFIGURACIÓN BÁSICA */
 :root {

@@ -1,0 +1,149 @@
+<!-- se declara el tipo de documento como HTML5, asegurando que el navegador lo reconozca -->
+<!DOCTYPE html>
+<!-- Etiqueta del documento que indica el idioma de la página -->
+<html lang="es">
+<!-- Etiqueta de cabecera del documento -->
+<head>
+    <!-- Sección de metadatos e importaciones que no se ven directamente en la página -->
+    <meta charset="UTF-8">
+    <!-- Etiqueta para configurar la vista del dispositivo, esto permite que la página se adapte a diferentes dispositivos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Etiqueta para establecer el título de la página -->
+    <title>TastyTap | Historial</title>
+    <!-- Importación de estilos base y variables para la primera vista que ve el usuario -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Importación de iconos de Font Awesome del los iconos del footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Se cierra la etiqueta de cabecera del documento -->
+</head>
+
+<!-- este es el cuerpo del documento que contiene todo el contenido que el usuario ve -->
+<body>
+
+    <!-- barra de navegación superior estática que contiene el logo y el menú principal -->
+    <header class="navbar">
+        <!-- logo de la barra de navegación -->
+        <div class="navbar__logo">
+            <!-- imagen del logo con su respectivo texto alternativo -->
+            <img src="/img/TastyTap.png" alt="Logo TastyTap" style="height: 4rem; vertical-align: middle; margin-right: 10px;">
+            <!-- nombre de la marca como encabezado -->
+            <h1>TastyTap</h1>
+        </div>
+        <!-- menú de navegación con enlaces a las secciones de usuario logueado -->
+        <nav class="navbar__menu">
+            <!-- Enlace a la página de inicio la clase active se utiliza para resaltar el enlace actual -->
+            <a href="/index.html">Inicio</a>
+            <!-- Enlace a la vista de la tienda, donde se muestran los productos y sus detalles del lugar -->
+            <a href="/views/public/tienda.html">Tienda</a>
+            <a href="/views/client/historial.html" class="active">Historial</a>
+            <!-- Enlace a la vista carrito, donde el usuario solo podra agregar pero no podra comprar,
+            porque al intentar comprar los productos lo va a redireccionar al registro y
+            cuando el cliente se registra lo va a redirigir al login para que ingrese y pueda hacer la compra -->
+            <a href="/views/public/carrito.html">Carrito</a>
+            <!--  Enlace a la vista de login  de sesión para usuarios -->
+            <a href="/views/public/login.html">Cerrar Sesión</a>
+            <!-- se cierra la etiqueta de la barra de navegación -->
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="main-title">Tu Historial de Pedidos</h1>
+
+        <!-- Contenedor de Tarjetas -->
+        <div class="orders-list">
+            
+            <!-- Pedido 1: En preparación -->
+            <div class="order-card card-preparing">
+                <div class="card-header">
+                    <span class="order-number">Pedido #TT-88291</span>
+                    <span class="status-badge badge-preparing">En preparación</span>
+                </div>
+                
+                <div class="card-body">
+                    <div class="order-details">
+                        <p class="order-date">Hoy, 07 de Febrero</p>
+                        <h3 class="order-items">Hamburguesa Doble Carne + Papas + Soda</h3>
+                        <p class="order-method">Metodo: Transferencia Bancaria</p>
+                        <!-- El botón que me pediste explicar antes -->
+                        <a href="/views/client/detalle-pedido.html" class="btn-outline">Ver detalles del pedido</a>
+                    </div>
+                    
+                    <div class="order-total">
+                        <span class="label-total">Total</span>
+                        <p class="amount-total">$29.900</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pedido 2: Entregado -->
+            <div class="order-card">
+                <div class="card-header">
+                    <span class="order-number">Pedido #TT-88150</span>
+                    <span class="status-badge badge-delivered">Entregado</span>
+                </div>
+                
+                <div class="card-body">
+                    <div class="order-details">
+                        <p class="order-date">02 de Febrero, 2024</p>
+                        <h3 class="order-items">Pizza Artesanal Grande (Peperoni)</h3>
+                        <p class="order-method">Metodo: Transferencia Bancaria</p>
+                        <!-- El botón que me pediste explicar antes -->
+                        <a href="/views/client/detalle-pedido.html" class="btn-outline">Ver detalles del pedido</a>
+                    </div>
+                    
+                    <div class="order-total">
+                        <span class="label-total">Total</span>
+                        <p class="amount-total">$35.000</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Botón Inferior -->
+        <div class="center-button">
+            <a href="/views/client/seguir-comprando.html" class="btn-primary">Volver a la Tienda</a>
+        </div>
+    </main>
+
+        <!-- PIE DE PÁGINA (Footer unificado) -->
+    <footer>
+        <!-- Columna de recomendaciones -->
+        <div class="footer-col">
+            <h4>Restaurantes Top</h4>
+            <ul>
+                <li>Camachos</li>
+                <li>Domino's</li>
+                <li>KFC</li>
+                <li>Mc Donald's</li>
+            </ul>
+        </div>
+        <!-- Columna para socios -->
+        <div class="footer-col">
+            <h4>Únete a Tasty Tap</h4>
+            <ul>
+                <li>Registra tu restaurante</li>
+                <li>Registra tu local</li>
+                <li>Promociona tu negocio</li>
+            </ul>
+        </div>
+        <!-- Columna de redes sociales -->
+        <div class="footer-col">
+            <h4>Síguenos</h4>
+            <div class="socials">
+                <i class="fab fa-facebook"></i> Facebook<br>
+                <i class="fab fa-instagram"></i> Instagram<br>
+                <i class="fab fa-tiktok"></i> TikTok
+            </div>
+        </div>
+        <!-- Columna de contacto físico/digital -->
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <p>📍 Calle 123 #45-67, Bogotá, Colombia</p>
+            <p>📞 +57 320 555 1234</p>
+            <p>✉️ contacto@tastytap.com</p>
+        </div>
+    </footer>
+
+</body>
+</html>
