@@ -54,31 +54,34 @@
                     <h3>Crear Cuenta</h3>
                 </div>
 
-                <form action="/views/public/login.html" class="login-form">
+                <!-- 1. CAMBIO: El action apunta al Servlet y el method es POST -->
+                <form action="../../registro-usuario" method="POST" class="login-form">
                     
                     <!-- Campo: Nombre Completo -->
                     <div class="input-group">
                         <label for="fullname"><i class="fas fa-user"></i> Nombre Completo</label>
-                        <input type="text" id="fullname" placeholder="Tu nombre y apellido" required>
+                        <!-- 2. CAMBIO: Agregamos name="nombre_registro" -->
+                        <input type="text" id="fullname" name="nombre_registro" placeholder="Tu nombre y apellido" required>
                     </div>
 
-                    <!-- Campo: Correo Electrónico -->
+                    <!-- NUEVO CAMBIO: Agregamos campo de Edad (Tu DB lo requiere) -->
+                    <div class="input-group">
+                        <label for="edad"><i class="fas fa-calendar-alt"></i> Edad</label>
+                        <input type="number" id="edad" name="edad_registro" placeholder="Ej: 25" required>
+                    </div>
+
+                    <!-- Campo: Correo Electrónico (Por ahora no lo guardaremos en el Java básico para no complicar el primer CRUD) -->
                     <div class="input-group">
                         <label for="email"><i class="fas fa-envelope"></i> Correo Electrónico</label>
-                        <input type="email" id="email" placeholder="correo@ejemplo.com" required>
-                    </div>
-
-                    <!-- Campo: Teléfono (Importante para pedidos) -->
-                    <div class="input-group">
-                        <label for="phone"><i class="fas fa-phone"></i> Teléfono Móvil</label>
-                        <input type="tel" id="phone" placeholder="Ej: 320 123 4567" required>
+                        <input type="email" id="email" placeholder="correo@ejemplo.com">
                     </div>
 
                     <!-- Fila de Contraseñas -->
                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                         <div class="input-group" style="flex: 1; min-width: 200px;">
                             <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
-                            <input type="password" id="password" placeholder="********" required>
+                            <!-- 3. CAMBIO: Agregamos name="pass_registro" -->
+                            <input type="password" id="password" name="pass_registro" placeholder="********" required>
                         </div>
                         <div class="input-group" style="flex: 1; min-width: 200px;">
                             <label for="confirm-password"><i class="fas fa-shield-alt"></i> Confirmar</label>
@@ -99,6 +102,56 @@
                         <p>¿Ya tienes una cuenta? <a href="/views/public/login.html">Inicia sesión aquí</a></p>
                     </div>
                 </form>
+
+                <!-- Formulario de Registro
+                <form action="/views/public/login.html" class="login-form">
+                    
+                    Campo: Nombre Completo
+                    <div class="input-group">
+                        <label for="fullname"><i class="fas fa-user"></i> Nombre Completo</label>
+                        <input type="text" id="fullname" placeholder="Tu nombre y apellido" required>
+                    </div>
+
+                    Campo: Correo Electrónico
+                    <div class="input-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Correo Electrónico</label>
+                        <input type="email" id="email" placeholder="correo@ejemplo.com" required>
+                    </div>
+
+                    Campo: Teléfono (Importante para pedidos)
+                    <div class="input-group">
+                        <label for="phone"><i class="fas fa-phone"></i> Teléfono Móvil</label>
+                        <input type="tel" id="phone" placeholder="Ej: 320 123 4567" required>
+                    </div>
+
+                    Fila de Contraseñas
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <div class="input-group" style="flex: 1; min-width: 200px;">
+                            <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                            <input type="password" id="password" placeholder="********" required>
+                        </div>
+                        <div class="input-group" style="flex: 1; min-width: 200px;">
+                            <label for="confirm-password"><i class="fas fa-shield-alt"></i> Confirmar</label>
+                            <input type="password" id="confirm-password" placeholder="********" required>
+                        </div>
+                    </div>
+
+                    Términos y Condiciones
+                    <div class="form-options" style="justify-content: flex-start; gap: 10px;">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms" style="font-size: 0.85rem;">Acepto los <a href="#">Términos y Condiciones</a></label>
+                    </div>
+
+                    Botón de Registro
+                    <button type="submit" class="btn-login-submit">Registrarme</button>
+                    
+                    <div class="login-footer">
+                        <p>¿Ya tienes una cuenta? <a href="/views/public/login.html">Inicia sesión aquí</a></p>
+                    </div>
+                </form>
+
+                ¿Quieres que ahora te ayude con el HTML de Login para que el usuario pueda entrar después de registrarse?** -->
+
             </div>
         </section>
     </main>
